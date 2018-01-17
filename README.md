@@ -1,7 +1,5 @@
 <h1>Site para controle de vendas informais</h1>
 
-<hr>
-
 Este projeto esta sendo desenvolvido em <strong>Laravel 5.5 Framework</strong>.
 
 Va a <strong>laravel.com</strong> para instalar suas dependencias.
