@@ -48,7 +48,7 @@ class ProdutoController extends Controller
             'valor_venda' => 'nullable|numeric'
         ));
 
-        // estor data
+        // store data
 
         $produto = new Produto;
 
@@ -112,7 +112,7 @@ class ProdutoController extends Controller
             'valor_venda' => 'nullable|numeric'
         ));
 
-        // estor data
+        // store data
 
         $Produto2 = Produto::find($produto->id);
 
