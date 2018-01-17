@@ -48,7 +48,7 @@ class ProdutoController extends Controller
             'valor_venda' => 'nullable|numeric'
         ));
 
-        // estore data
+        // estor data
 
         $produto = new Produto;
 
@@ -112,7 +112,7 @@ class ProdutoController extends Controller
             'valor_venda' => 'nullable|numeric'
         ));
 
-        // estore data
+        // estor data
 
         $Produto2 = Produto::find($produto->id);
 
@@ -141,7 +141,7 @@ class ProdutoController extends Controller
     {
         //Finds the item to be deleted
         $produtoParaDeletar = Produto::find($produto->id);
-        //Add the item's name to a variable for show in seccess message
+        //Add the item's name to a variable for show in success message
         $nomeProduto = $produtoParaDeletar->name;
         //Delete item from data base
         $produtoParaDeletar->delete();
