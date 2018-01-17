@@ -17,7 +17,7 @@
 				<table class="table table-sm table-striped mt-3">
 				  <thead>
 				    <tr>
-				      <th>#</th>
+				      <th>Cod.</th>
 				      <th>Produto</th>
 				      <th>Marca</th>
 				      <th>Categoria</th>				      
