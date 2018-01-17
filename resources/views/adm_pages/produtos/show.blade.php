@@ -64,8 +64,12 @@
 						    </div>
 						    <div class="card-footer text-muted">
 						    	<div class="row">
-						    		<div class="text-center col"><a href="" class="btn btn-primary btn-block">Editar</a></div>
-									<div class="text-center col"><a href="" class="btn btn-danger btn-block">Deletar</a></div>
+						    		<div class="text-center col"><a href="{{ route('produto.edit',$produto->id) }}" class="btn btn-primary btn-block">Editar</a></div>	
+									<div class="text-center col">
+										{!! Form::open(['route'=>['produto.destroy',$produto->id], 'method'=>'DELETE']) !!}
+						    				{{ Form::submit('Deletar',['class'=>'btn btn-danger btn-block']) }}
+						    			{!! Form::close() !!}
+									</div>
 						    	</div>						    	
 						    	<div class="row mt-3">
 						    		<div class="text-center col"><a href="{{ url()->previous() }}" class="btn btn-outline-secondary btn-block" ><< Voltar aos produtos</a></div>

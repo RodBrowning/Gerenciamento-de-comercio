@@ -87,7 +87,9 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
-        //
+        $prod = Produto::find($produto->id);
+
+        return view('adm_pages.produtos.edit')->withProduto($prod);
     }
 
     /**
@@ -99,7 +101,34 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, Produto $produto)
     {
-        //
+       // validate data
+
+        $this->validate($request,array(
+
+            'name'        => 'required|min:2|max:255',
+            'marca'       => 'max:255',
+            'categoria'   => 'required|min:2|max:255',
+            'descricao'   => 'nullable|min:2|max:1000',
+            'valor_venda' => 'nullable|numeric'
+        ));
+
+        // estore data
+
+        $Produto2 = Produto::find($produto->id);
+
+        $Produto2->name = $request->input('name');
+        $Produto2->marca = $request->input('marca');
+        $Produto2->categoria = $request->input('categoria');
+        $Produto2->descricao = $request->input('descricao');
+        $Produto2->valor_venda = $request->input('valor_venda');
+
+        $Produto2->update();
+
+        // create a flash success msg
+        Session::flash('success','Produto cadastrado com sucesso.');
+
+        // redirect to produtos
+        return redirect()->route('produto.show',$Produto2->id);
     }
 
     /**
@@ -110,6 +139,18 @@ class ProdutoController extends Controller
      */
     public function destroy(Produto $produto)
     {
-        //
+        //Finds the item to be deleted
+        $produtoParaDeletar = Produto::find($produto->id);
+        //Add the item's name to a variable for show in seccess message
+        $nomeProduto = $produtoParaDeletar->name;
+        //Delete item from data base
+        $produtoParaDeletar->delete();
+
+        Session::flash('success',"O produto $nomeProduto Cod:$produto->id foi deletado com sucesso.");
+
+        return redirect()->route('produto.index');
     }
 }
+
+
+
