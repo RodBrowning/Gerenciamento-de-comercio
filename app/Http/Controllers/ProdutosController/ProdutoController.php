@@ -18,7 +18,7 @@ class ProdutoController extends Controller
     public function index()
     {   
         $categ = Categoria::all();
-        $produtos = Produto::orderBy('created_at','desc')->paginate(20);
+        $produtos = Produto::orderBy('categoria','asc')->orderBy('name','asc')->paginate(20);
         return view('adm_pages.produtos.index')->withProdutos($produtos)->withCategorias($categ);
     }
 
