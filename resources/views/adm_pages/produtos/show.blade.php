@@ -36,7 +36,7 @@
 								      <td class="pt-2 pb-2">{{$produto->marca}}</td>
 								      @endif
 								      <td class="pt-2 pb-2">
-								     {{ isset($produto->categories->categoria) ? ucfirst($produto->categories->categoria) : "Categoria não encontrada." }}
+								     {{ ucfirst($produto->categories->categoria) }}
 								      	
 								      </td>								      
 								      @if(isset($produto->valor_venda))

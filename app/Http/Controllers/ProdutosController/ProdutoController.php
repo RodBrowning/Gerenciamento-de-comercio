@@ -18,7 +18,7 @@ class ProdutoController extends Controller
     public function index()
     {   
         
-        $produtos = Produto::orderBy('name','asc')->paginate(20);
+        $produtos = Produto::orderBy('categoria_id','asc')->orderBy('name','asc')->paginate(20);
         return view('adm_pages.produtos.index')->withProdutos($produtos);
     }
 
