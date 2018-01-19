@@ -4,10 +4,10 @@
 
 @section('content')
 				
-				<div class="col-md-6 offset-md-2">
+				<div class="col-md-6 text-center">
 					<h1 class="">Produtos</h1>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-6 text-center">
 					<a href="{{ route('produto.create') }}" class="btn btn-primary mt-1">Cadastrar produto</a>	
 				</div>	
 				<div class="col-md-12">
@@ -29,8 +29,11 @@
 				  		<tr>
 					      <th scope="row">{{$produto->id}}</th>
 					      <td>{{$produto->name}}</td>
-					      <td>{{$produto->marca}}</td>
 					      <td>
+					      	{{ isset($produto->marca) ? $produto->marca : '---' }}
+					      </td>
+					      <td>
+					      	<!--Este codigo exibe a categoria relacionada quando darem mach-->
 					      	@foreach($categorias as $categoria)
 					      		@if($categoria->id == $produto->categoria)
 					      			{{ ucfirst($categoria->categoria) }}
