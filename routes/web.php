@@ -17,4 +17,4 @@ Route::get('vendas',['as' => 'pages.vendas', 'uses' => 'PagesController@vendas']
 Route::get('compras',['as' => 'pages.compras', 'uses' => 'PagesController@compras']);
 Route::get('produtos',['as' => 'pages.produtos', 'uses' => 'PagesController@produtos']);
 
-Route::resource('produto', 'ProdutoController');
+Route::resource('produto', 'ProdutosController\ProdutoController');

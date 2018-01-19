@@ -72,7 +72,7 @@
 									</div>
 						    	</div>						    	
 						    	<div class="row mt-3">
-						    		<div class="text-center col"><a href="{{ url()->previous() }}" class="btn btn-outline-secondary btn-block" ><< Voltar aos produtos</a></div>
+						    		<div class="text-center col"><a href="{{ route('produto.index') }}" class="btn btn-outline-secondary btn-block" ><< Voltar aos produtos</a></div>
 						    	</div>
 							</div>
 						</div>						

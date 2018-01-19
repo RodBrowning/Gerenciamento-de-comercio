@@ -21,6 +21,7 @@ class TelefoneDosFornecedores extends Migration
         });
 
         //This code attributes "fornecedor_id" as a foreign key and sign it.
+        //First create the table then references it.
         Schema::table('telefones_fornecedores', function (Blueprint $table) {
             $table->foreign('fornecedor_id')->references('id')->on('fornecedores');
         });
