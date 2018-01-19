@@ -30,7 +30,13 @@
 					      <th scope="row">{{$produto->id}}</th>
 					      <td>{{$produto->name}}</td>
 					      <td>{{$produto->marca}}</td>
-					      <td>{{$produto->categoria}}</td>					      
+					      <td>
+					      	@foreach($categorias as $categoria)
+					      		@if($categoria->id == $produto->categoria)
+					      			{{ ucfirst($categoria->categoria) }}
+					      		@endif
+					      	@endforeach
+					      </td>					      
 					      <td>
 					      	<a href="{{ route('produto.show',$produto->id)}}" class="btn btn-secondary btn-sm">Ver</a>
 					      </td>				      

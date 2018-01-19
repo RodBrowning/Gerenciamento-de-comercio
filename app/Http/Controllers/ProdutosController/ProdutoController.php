@@ -17,8 +17,9 @@ class ProdutoController extends Controller
      */
     public function index()
     {   
+        $categ = Categoria::all();
         $produtos = Produto::orderBy('created_at','desc')->paginate(20);
-        return view('adm_pages.produtos.index')->withProdutos($produtos);
+        return view('adm_pages.produtos.index')->withProdutos($produtos)->withCategorias($categ);
     }
 
     /**
@@ -78,9 +79,9 @@ class ProdutoController extends Controller
      */
     public function show(Produto $produto)
     {   
-        
+        $categ = Categoria::all();
         $prod = Produto::find($produto->id);        
-        return view('adm_pages.produtos.show')->withProduto($prod);
+        return view('adm_pages.produtos.show')->withProduto($prod)->withCategorias($categ);
         }
 
     /**
@@ -90,10 +91,11 @@ class ProdutoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Produto $produto)
-    {
+    {   
+        $categ = Categoria::all();
         $prod = Produto::find($produto->id);
 
-        return view('adm_pages.produtos.edit')->withProduto($prod);
+        return view('adm_pages.produtos.edit')->withProduto($prod)->withCategorias($categ);
     }
 
     /**

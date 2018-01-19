@@ -22,7 +22,11 @@
 
 
 					{{ Form::label('categoria', 'Categoria:',['class'=>'mt-2'])}}
-					{{ Form::text('categoria',$produto->categoria,['class'=>'form-control', 'required'=>'', 'minlength'=>'2','maxlength'=>'255'])}}		
+					<select name='categoria' class="form-control">
+						@foreach($categorias as $categoria)
+							<option {{ $categoria->id == $produto->categoria ? "selected":"" }} value="{{$categoria->id}}">{{ ucfirst($categoria->categoria) }}</option>
+						@endforeach					  
+					</select>
 
 					{{ Form::label('valor_venda', 'Valor de venda:',['class'=>'mt-2'])}}
 					{{ Form::number('valor_venda', $produto->valor_venda,['class'=>'form-control', 'placeholder'=>'Pode ser null','step'=>'0.01', 'data-parsley-type'=>'number'])}}	
@@ -31,7 +35,7 @@
 					{{ Form::textarea('descricao',$produto->descricao,['class'=>'form-control'])}}					
 					<div class="row">
 						<div class="col-md-6">
-							{{ Form::submit('Editar',['class'=>'btn btn-primary btn-block mt-3'])}}
+							{{ Form::submit('Salvar Edição',['class'=>'btn btn-success btn-block mt-3'])}}
 						</div>
 						<div class="col-md-6">
 							<a href="{{ route('produto.show',$produto->id) }}" class="btn btn-danger btn-block mt-3 col">Cancelar</a>	

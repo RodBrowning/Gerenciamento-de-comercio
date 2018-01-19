@@ -22,10 +22,10 @@
 
 
 					{{ Form::label('categoria', 'Categoria:',['class'=>'mt-2'])}}
-					<select name='categoria' class="form-control'">
+					<select name='categoria' class="form-control">
 						<option>Selecione...</option>
 						@foreach($categorias as $categoria)
-							<option value="{{$categoria->id}}">{{$categoria->categoria}}</option>
+							<option value="{{$categoria->id}}">{{ ucfirst($categoria->categoria) }}</option>
 						@endforeach					  
 					</select>
 
