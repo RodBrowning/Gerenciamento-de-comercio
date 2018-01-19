@@ -22,7 +22,12 @@
 
 
 					{{ Form::label('categoria', 'Categoria:',['class'=>'mt-2'])}}
-					{{ Form::text('categoria',null,['class'=>'form-control', 'required'=>'', 'minlength'=>'2','maxlength'=>'255'])}}		
+					<select name='categoria' class="form-control'">
+						<option>Selecione...</option>
+						@foreach($categorias as $categoria)
+							<option value="{{$categoria->id}}">{{$categoria->categoria}}</option>
+						@endforeach					  
+					</select>
 
 					{{ Form::label('valor_venda', 'Valor de venda:',['class'=>'mt-2'])}}
 					{{ Form::number('valor_venda', null,['class'=>'form-control', 'placeholder'=>'Pode ser null','step'=>'0.01', 'data-parsley-type'=>'number'])}}	
