@@ -21,8 +21,8 @@
 					{{ Form::text('marca',null,['class'=>'form-control', 'maxlength'=>'255'])}}					
 
 
-					{{ Form::label('categoria', 'Categoria:',['class'=>'mt-2'])}}
-					<select name='categoria' class="form-control">
+					{{ Form::label('categoria_id', 'Categoria:',['class'=>'mt-2'])}}
+					<select name='categoria_id' class="form-control">
 						<option>Selecione...</option>
 						@foreach($categorias as $categoria)
 							<option value="{{$categoria->id}}">{{ ucfirst($categoria->categoria) }}</option>

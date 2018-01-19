@@ -5,7 +5,7 @@ namespace App\Http\Controllers\ProdutosController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Produto;
-use App\Produtos\Categorias_produto as Categoria;
+use App\Produtos\Categoria;
 use Session;
 
 class ProdutoController extends Controller
@@ -17,9 +17,9 @@ class ProdutoController extends Controller
      */
     public function index()
     {   
-        $categ = Categoria::all();
-        $produtos = Produto::orderBy('categoria','asc')->orderBy('name','asc')->paginate(20);
-        return view('adm_pages.produtos.index')->withProdutos($produtos)->withCategorias($categ);
+        
+        $produtos = Produto::orderBy('name','asc')->paginate(20);
+        return view('adm_pages.produtos.index')->withProdutos($produtos);
     }
 
     /**
@@ -29,7 +29,7 @@ class ProdutoController extends Controller
      */
     public function create()
     {   
-        $categ = Categoria::all();
+        $categ = Categoria::orderBy('categoria','asc')->get();
         return view('adm_pages.produtos.cadastro')->withCategorias($categ);
     }
 
@@ -47,7 +47,7 @@ class ProdutoController extends Controller
 
             'name'        => 'required|min:2|max:255',
             'marca'       => 'max:255',
-            'categoria'   => 'required|numeric',
+            'categoria_id'=> 'required|numeric',
             'descricao'   => 'nullable|min:2|max:1000',
             'valor_venda' => 'nullable|numeric'
         ));
@@ -58,7 +58,7 @@ class ProdutoController extends Controller
 
         $produto->name = $request->name;
         $produto->marca = $request->marca;
-        $produto->categoria = $request->categoria;
+        $produto->categoria_id = $request->categoria_id;
         $produto->descricao = $request->descricao;
         $produto->valor_venda = $request->valor_venda;
 
@@ -79,9 +79,9 @@ class ProdutoController extends Controller
      */
     public function show(Produto $produto)
     {   
-        $categ = Categoria::all();
+        
         $prod = Produto::find($produto->id);        
-        return view('adm_pages.produtos.show')->withProduto($prod)->withCategorias($categ);
+        return view('adm_pages.produtos.show')->withProduto($prod);
         }
 
     /**
@@ -92,7 +92,7 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {   
-        $categ = Categoria::all();
+        $categ = Categoria::orderBy('categoria','asc')->get();
         $prod = Produto::find($produto->id);
 
         return view('adm_pages.produtos.edit')->withProduto($prod)->withCategorias($categ);
@@ -113,7 +113,7 @@ class ProdutoController extends Controller
 
             'name'        => 'required|min:2|max:255',
             'marca'       => 'max:255',
-            'categoria'   => 'required|numeric',
+            'categoria_id'=> 'required|numeric',
             'descricao'   => 'nullable|min:2|max:1000',
             'valor_venda' => 'nullable|numeric'
         ));
@@ -124,7 +124,7 @@ class ProdutoController extends Controller
 
         $Produto2->name = $request->input('name');
         $Produto2->marca = $request->input('marca');
-        $Produto2->categoria = $request->input('categoria');
+        $Produto2->categoria_id = $request->input('categoria_id');
         $Produto2->descricao = $request->input('descricao');
         $Produto2->valor_venda = $request->input('valor_venda');
 

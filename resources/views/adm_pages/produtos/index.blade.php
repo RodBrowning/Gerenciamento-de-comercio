@@ -33,12 +33,7 @@
 					      	{{ isset($produto->marca) ? $produto->marca : '---' }}
 					      </td>
 					      <td>
-					      	<!--Este codigo exibe a categoria relacionada quando darem mach-->
-					      	@foreach($categorias as $categoria)
-					      		@if($categoria->id == $produto->categoria)
-					      			{{ ucfirst($categoria->categoria) }}
-					      		@endif
-					      	@endforeach
+					      	{{ isset($produto->categories->categoria) ? ucfirst($produto->categories->categoria) : "Categoria não encontrada." }}
 					      </td>					      
 					      <td>
 					      	<a href="{{ route('produto.show',$produto->id)}}" class="btn btn-secondary btn-sm">Ver</a>

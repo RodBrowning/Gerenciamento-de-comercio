@@ -36,12 +36,8 @@
 								      <td class="pt-2 pb-2">{{$produto->marca}}</td>
 								      @endif
 								      <td class="pt-2 pb-2">
-								      @foreach($categorias as $categoria)
-								      	@if($categoria->id == $produto->categoria)
-								      		{{ ucfirst($categoria->categoria) }}
-								      	@endif
-								      @endforeach
-
+								     {{ isset($produto->categories->categoria) ? ucfirst($produto->categories->categoria) : "Categoria não encontrada." }}
+								      	
 								      </td>								      
 								      @if(isset($produto->valor_venda))
 								      	<td class="text-center">R$ {{$produto->valor_venda}}</td>
