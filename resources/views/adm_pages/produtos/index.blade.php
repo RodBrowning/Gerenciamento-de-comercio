@@ -35,7 +35,7 @@
 							      	{{ isset($produto->marca) ? $produto->marca : '---' }}
 							      </td>
 							      <td>
-							      	{{ $produto->categories->categoria }}
+							      	{{ ucfirst($produto->categories->categoria) }}
 							      </td>					      
 							      <td>
 							      	<a href="{{ route('produto.show',$produto->id)}}" class="btn btn-secondary btn-sm">Ver</a>
