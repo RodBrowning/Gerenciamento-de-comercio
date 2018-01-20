@@ -40,7 +40,7 @@
 								      	
 								      </td>								      
 								      @if(isset($produto->valor_venda))
-								      	<td class="text-center">R$ {{$produto->valor_venda}}</td>
+								      	<td class="text-center">R$ {{ number_format($produto->valor_venda, 2) }}</td>
 								      @endif
 								    </tr>							    								  	
 								    @if(isset($produto->descricao))

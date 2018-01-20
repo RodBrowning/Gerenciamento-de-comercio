@@ -8,7 +8,10 @@
 					<h1 class="">Produtos</h1>
 				</div>
 				<div class="col-md-6 text-center">
-					<a href="{{ route('produto.create') }}" class="btn btn-primary mt-1">Cadastrar produto</a>	
+					<div class="btn-group" role="group" aria-label="Basic example">
+					  <a href="{{ route('produto.create') }}" class="btn btn-secondary mt-1">Cadastrar produto</a>
+					  <a href="{{ route('produto.create') }}" class="btn btn-secondary mt-1">Nova Categoria</a>					  
+					</div>					
 				</div>	
 				<div class="col-md-12">
 					<hr>													

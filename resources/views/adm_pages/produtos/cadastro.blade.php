@@ -9,31 +9,43 @@
 @section('content')
 	
 			<div class="col-md-8 offset-md-2">
-				<h1 class="text-center">Cadadastro de Produto</h3>
+				<h2 class="text-center">Cadadastro de Produto</h2>
 				<hr>												
 			</div>
 			<div class="col-md-6 offset-md-3">
 				{!! Form::open(['route'=>'produto.store', 'method'=>'post', 'data-parsley-validate'=>'']) !!}
-					{{ Form::label('name', 'Nome:',['class'=>'mt-2'])}}
-					{{ Form::text('name',null,['class'=>'form-control', 'required'=>'', 'minlength'=>'2','maxlength'=>'255'])}}
+				<div class="form-group row">
+					{{ Form::label('name', 'Nome:',['class'=>'mt-2 col-sm-2 col-form-label col-form-label-sm'])}}
+					<div class="col-sm-10 mt-2">
+						{{ Form::text('name',null,['class'=>'form-control form-control-sm', 'required'=>'', 'minlength'=>'2','maxlength'=>'255'])}}
+					</div>
 
-					{{ Form::label('marca', 'Marca:',['class'=>'mt-2'])}}
-					{{ Form::text('marca',null,['class'=>'form-control', 'maxlength'=>'255'])}}					
+					{{ Form::label('marca', 'Marca:',['class'=>'mt-2 col-sm-2 col-form-label col-form-label-sm'])}}
+					<div class="col-sm-10 mt-2">
+						{{ Form::text('marca',null,['class'=>'form-control form-control-sm', 'maxlength'=>'255'])}}					
+					</div>
 
 
-					{{ Form::label('categoria_id', 'Categoria:',['class'=>'mt-2'])}}
-					<select name='categoria_id' class="form-control">
-						<option>Selecione...</option>
-						@foreach($categorias as $categoria)
-							<option value="{{$categoria->id}}">{{ ucfirst($categoria->categoria) }}</option>
-						@endforeach					  
-					</select>
+					{{ Form::label('categoria_id', 'Categoria:',['class'=>'mt-2 col-sm-2 col-form-label col-form-label-sm'])}}
+					<div class="col-sm-10 mt-2">
+						<select name='categoria_id' class="form-control form-control-sm">
+							<option>Selecione...</option>
+							@foreach($categorias as $categoria)
+								<option value="{{$categoria->id}}">{{ ucfirst($categoria->categoria) }}</option>
+							@endforeach					  
+						</select>
+					</div>
 
-					{{ Form::label('valor_venda', 'Valor de venda:',['class'=>'mt-2'])}}
-					{{ Form::number('valor_venda', null,['class'=>'form-control', 'placeholder'=>'Pode ser null','step'=>'0.01', 'data-parsley-type'=>'number'])}}	
+					{{ Form::label('valor_venda', 'Valor de venda:',['class'=>'mt-2 col-sm-3 col-form-label col-form-label-sm'])}}
+					<div class="col-sm-9 mt-2">
+						{{ Form::number('valor_venda', null,['class'=>'form-control form-control-sm', 'placeholder'=>'Pode ser null','step'=>'0.01', 'data-parsley-type'=>'number'])}}	
+					</div>
 
-					{{ Form::label('descricao', 'Descrição:',['class'=>'mt-2'])}}
-					{{ Form::textarea('descricao',null,['class'=>'form-control'])}}					
+					{{ Form::label('descricao', 'Descrição:',['class'=>'mt-2 col-sm-2 col-form-label col-form-label-sm'])}}
+					<div class="col-sm-10 mt-2">
+						{{ Form::textarea('descricao',null,['class'=>'form-control form-control-sm'])}}					
+					</div>
+				</div>
 
 					{{ Form::submit('Cadastrar',['class'=>'btn btn-primary btn-block mt-3'])}}
 				{!! Form::close() !!}

@@ -79,7 +79,6 @@ class ProdutoController extends Controller
      */
     public function show(Produto $produto)
     {   
-        
         $prod = Produto::find($produto->id);        
         return view('adm_pages.produtos.show')->withProduto($prod);
         }
