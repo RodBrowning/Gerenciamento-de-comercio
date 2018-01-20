@@ -102,9 +102,9 @@ class CategoriaController extends Controller
      * @param  \App\Produtos\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categoria $categoria)
-    {
-        //
+    public function destroy($id)
+    {   
+        
     }
 
     /**
@@ -126,6 +126,29 @@ class CategoriaController extends Controller
         return redirect()->route('categoria.index');
         
 
+
+    }
+
+    public function excluidas(){
+
+        $excluidas = Categoria::orderBy('categoria','asc')->paginate(15);
+
+        return view('adm_pages.categorias.excluidas')->withExcluidas($excluidas);
+    }
+
+    public function restaurar($id){
+
+        $restaurar = Categoria::find($id);
+
+        $restaurar->ativa = true;
+
+        $restaurar->update();
+
+        $restaurado = ucwords($restaurar->categoria);
+
+        Session::flash('success', "A categoria $restaurado foi restaurada con sucesso.");
+
+        return redirect()->route('categoria.excluidas');
 
     }
 }

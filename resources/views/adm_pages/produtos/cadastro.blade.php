@@ -31,7 +31,9 @@
 						<select name='categoria_id' class="form-control form-control-sm">
 							<option>Selecione...</option>
 							@foreach($categorias as $categoria)
-								<option value="{{$categoria->id}}">{{ ucfirst($categoria->categoria) }}</option>
+								@if($categoria->ativa)
+									<option value="{{$categoria->id}}">{{ ucfirst($categoria->categoria) }}</option>
+								@endif
 							@endforeach					  
 						</select>
 					</div>

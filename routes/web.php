@@ -23,3 +23,7 @@ Route::resource('categoria', 'ProdutosController\CategoriasController\CategoriaC
 
 //Rota para o 'Delete categoria' que apenas deixa a inativa.
 Route::get('categoria/delete/{categorium}', ['as'=>'categoria.delete', 'uses'=>'ProdutosController\CategoriasController\CategoriaController@deletar']);
+
+Route::get('categoria/{id}/restaurar_categoria',['as'=>'categoria.restaurar', 'uses'=>'ProdutosController\CategoriasController\CategoriaController@restaurar']);
+
+Route::get('categorias/excluidas',['as'=>'categoria.excluidas','uses'=>'ProdutosController\CategoriasController\CategoriaController@excluidas']);

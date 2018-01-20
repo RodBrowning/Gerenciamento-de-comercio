@@ -7,8 +7,12 @@
 	<div class="col-md-6 text-center">
 		<h2 class="">Categorias</h2>
 	</div>
-	<div class="col-md-6 text-center">				  
-		  <a href="{{ route('categoria.create') }}" class="btn btn-secondary mt-1">Nova Categoria</a>				
+	<div class="col-md-6 text-left">
+		<div class="btn-group" role="group" aria-label="Basic example">
+		  <a href="{{ route('produto.index') }}" class="btn btn-secondary mt-1">Produtos</a>
+		  <a href="{{ route('categoria.create') }}" class="btn btn-secondary mt-1">Nova Categoria</a>
+		  <a href="{{ route('categoria.excluidas') }}" class="btn btn-secondary mt-1">Categorias excluidas</a>			
+		</div>					
 	</div>
 	<div class="col-md-12">
 		<hr>													
