@@ -4,18 +4,18 @@
 
 @section('content')
 				
-				<div class="col-md-6 text-center">
-					<h1 class="">Produtos</h1>
-				</div>
-				<div class="col-md-6 text-center">
-					<div class="btn-group" role="group" aria-label="Basic example">
-					  <a href="{{ route('produto.create') }}" class="btn btn-secondary mt-1">Cadastrar produto</a>
-					  <a href="{{ route('produto.create') }}" class="btn btn-secondary mt-1">Nova Categoria</a>					  
-					</div>					
-				</div>	
-				<div class="col-md-12">
-					<hr>													
-				</div>			
+			<div class="col-md-6 text-center">
+				<h2 class="">Produtos</h2>
+			</div>
+			<div class="col-md-6 text-center">
+				<div class="btn-group" role="group" aria-label="Basic example">
+				  <a href="{{ route('produto.create') }}" class="btn btn-secondary mt-1">Cadastrar produto</a>
+				  <a href="{{ route('categoria.index') }}" class="btn btn-secondary mt-1">Categorias</a>		
+				</div>					
+			</div>	
+			<div class="col-md-12">
+				<hr>													
+			</div>			
 			<div class="col-md-8 offset-md-2">
 				<table class="table table-sm table-striped mt-3">
 				  <thead>

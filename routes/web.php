@@ -17,4 +17,9 @@ Route::get('vendas',['as' => 'pages.vendas', 'uses' => 'PagesController@vendas']
 Route::get('compras',['as' => 'pages.compras', 'uses' => 'PagesController@compras']);
 Route::get('produtos',['as' => 'pages.produtos', 'uses' => 'PagesController@produtos']);
 
+//Controllers produto e categoria
 Route::resource('produto', 'ProdutosController\ProdutoController');
+Route::resource('categoria', 'ProdutosController\CategoriasController\CategoriaController');
+
+//Rota para o 'Delete categoria' que apenas deixa a inativa.
+Route::get('categoria/delete/{categorium}', ['as'=>'categoria.delete', 'uses'=>'ProdutosController\CategoriasController\CategoriaController@deletar']);
