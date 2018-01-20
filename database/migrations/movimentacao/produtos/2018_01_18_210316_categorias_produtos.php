@@ -13,7 +13,7 @@ class CategoriasProdutos extends Migration
      */
     public function up()
     {
-        Schema::create('categorias_produtos', function (Blueprint $table) {
+        Schema::create('categorias', function (Blueprint $table) {
             $table->increments('id');
             $table->string('categoria');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CategoriasProdutos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categorias_produtos');
+        Schema::dropIfExists('categorias');
     }
 }

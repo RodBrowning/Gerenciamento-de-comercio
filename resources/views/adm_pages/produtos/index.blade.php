@@ -25,20 +25,24 @@
 				    </tr>
 				  </thead>
 				  <tbody>
-				  	@foreach($produtos as $produto)
-				  		<tr>
-					      <th scope="row">{{$produto->id}}</th>
-					      <td>{{$produto->name}}</td>
-					      <td>
-					      	{{ isset($produto->marca) ? $produto->marca : '---' }}
-					      </td>
-					      <td>
-					      	{{ ucfirst($produto->categories->categoria) }}
-					      </td>					      
-					      <td>
-					      	<a href="{{ route('produto.show',$produto->id)}}" class="btn btn-secondary btn-sm">Ver</a>
-					      </td>				      
-					    </tr>
+				  	@foreach($categorias as $cate)
+					  	@foreach($produtos as $produto)
+						  	@if($cate->id == $produto->categoria_id)
+						  		<tr>
+							      <th scope="row">{{$produto->id}}</th>
+							      <td>{{$produto->name}}</td>
+							      <td>
+							      	{{ isset($produto->marca) ? $produto->marca : '---' }}
+							      </td>
+							      <td>
+							      	{{ $produto->categories->categoria }}
+							      </td>					      
+							      <td>
+							      	<a href="{{ route('produto.show',$produto->id)}}" class="btn btn-secondary btn-sm">Ver</a>
+							      </td>				      
+							    </tr>
+							    @endif
+					  	@endforeach
 				  	@endforeach
 				    
 				  </tbody>

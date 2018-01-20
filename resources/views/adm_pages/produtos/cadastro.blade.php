@@ -37,6 +37,9 @@
 
 					{{ Form::submit('Cadastrar',['class'=>'btn btn-primary btn-block mt-3'])}}
 				{!! Form::close() !!}
+					<div class="row mt-3">
+			    		<div class="text-center col"><a href="{{ route('produto.index') }}" class="btn btn-outline-secondary btn-block" ><< Voltar aos produtos</a></div>
+			    	</div>
 			</div>
 		
 @endsection

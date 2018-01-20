@@ -17,14 +17,14 @@ class Produtos extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('marca')->nullable(true);
-            $table->unsignedInteger('categoria');
+            $table->unsignedInteger('categoria_id');
             $table->text('descricao')->nullable(true);
             $table->float('valor_venda', 8, 2)->nullable(true);
             $table->timestamps();
         });
 
         Schema::table('produtos', function (Blueprint $table) {
-            $table->foreign('categoria')->references('id')->on('categorias_produtos');
+            $table->foreign('categoria_id')->references('id')->on('categorias_produtos');
         });
     }
 
