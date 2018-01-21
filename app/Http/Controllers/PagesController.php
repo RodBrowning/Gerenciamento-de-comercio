@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Produto;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -24,6 +25,8 @@ class PagesController extends Controller
     }
 
     public function produtos(){
-        return view('pages.produtos');
+
+        $produtos = Produto::orderBy('categoria_id','asc')->paginate(15);
+        return view('pages.produtos')->withProdutos($produtos);
     }
 }

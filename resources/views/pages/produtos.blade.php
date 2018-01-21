@@ -23,32 +23,21 @@
 				    </tr>
 				  </thead>
 				  <tbody>
-				    <tr>
-				      <th scope="row">1</th>
-				      <td>Mark</td>
-				      <td>Otto</td>
-				      <td>Otto</td>
-				      <td>@mdo</td>
-				      <td>Otto</td>
-				    </tr>
-				    <tr>
-				      <th scope="row">2</th>
-				      <td>Jacob</td>
-				      <td>Thornton</td>
-				      <td>@fat</td>
-				      <td>Otto</td>
-				      <td>Otto</td>
-				    </tr>
-				    <tr>
-				      <th scope="row">3</th>
-				      <td>Larry</td>
-				      <td>the Bird</td>
-				      <td>@twitter</td>
-				      <td>Otto</td>
-				      <td>Otto</td>
-				    </tr>
+				  	@foreach($produtos as $produto)
+					    <tr>
+					      <th scope="row">{{ $produto->id }}</th>
+					      <td>{{ $produto->name }}</td>
+					      <td>{{ $produto->marca }}</td>
+					      <td>{{ $produto->categories->categoria }}</td>
+					      <td>{{ $produto->descricao }}</td>
+					      <td>{{ isset($produto->valor_venda) ? $produto->valor_venda : "Valor Não informado"}}</td>
+					    </tr>
+				    @endforeach
 				  </tbody>
 				</table>
+			</div>
+			<div class="center-pagination">
+				{!! $produtos->links() !!}				
 			</div>
 		
 @endsection

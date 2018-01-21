@@ -171,8 +171,9 @@
 				  <thead>
 				    <tr>
 				      <th>#</th>
-				      <th>Nome</th>
+				      <th>Vendedor</th>
 				      <th>Mês</th>
+				      <th>Nº Vendas</th>
 				      <th>Valor</th>
 				    </tr>
 				  </thead>
@@ -181,19 +182,22 @@
 				      <th scope="row">1</th>
 				      <td>Mark</td>
 				      <td>Otto</td>
+					  <td>49</td>
 				      <td>@mdo</td>
 				    </tr>
 				    <tr>
 				      <th scope="row">2</th>
 				      <td>Jacob</td>
 				      <td>Thornton</td>
+				      <td>32</td>
 				      <td>@fat</td>
 				    </tr>
 				    <tr>
 				      <th scope="row">3</th>
 				      <td>Larry</td>
 				      <td>the Bird</td>
-				      <td>@twitter</td>
+				      <td>76</td>
+				      <td>@twitter</td>				      
 				    </tr>
 				  </tbody>
 				</table>
@@ -202,8 +206,3 @@
 @endsection
 
 
-<!--
-	* resumo : vendas
-
-
--->

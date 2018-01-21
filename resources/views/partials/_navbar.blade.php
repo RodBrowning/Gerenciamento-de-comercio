@@ -2,7 +2,7 @@
 	  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
-	  <a class="navbar-brand black-font" href="#">Controle de Vendas</a>
+	  <a class="navbar-brand black-font" href="#">$ Controle de Vendas $</a>
 	  <div class="collapse navbar-collapse w-100" id="navbarNavDropdown">
 	    <ul class="navbar-nav col-lg-9">
 	      <li class="nav-item {{ Request::is('/') ? 'active':'' }}">
@@ -31,6 +31,7 @@
 		          <a class="dropdown-item" href="#">Lançar Vendas</a>
 		          <a class="dropdown-item" href="#">Lancar Compras</a>
 		          <a class="dropdown-item" href="#">Prod. c/ Vendedor</a>
+		          <a class="dropdown-item" href="#">Lancar Pagamento</a>
 		          <hr>
 		          <p class="bg-primary text-white text-center">Cadastros</p>
 		          <a class="dropdown-item" href="{{ route('produto.index') }}">Produtos</a>
