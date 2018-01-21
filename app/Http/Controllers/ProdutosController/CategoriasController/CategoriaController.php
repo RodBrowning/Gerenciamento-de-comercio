@@ -79,9 +79,11 @@ class CategoriaController extends Controller
      * @param  \App\Produtos\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categoria $categoria)
+    public function edit($id)
     {
-        //
+        $categ = Categoria::find($id);
+        return view('adm_pages.categorias.editar')->withCategoria($categ);
+
     }
 
     /**
@@ -91,9 +93,29 @@ class CategoriaController extends Controller
      * @param  \App\Produtos\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categoria $categoria)
+    public function update(Request $request, $id)
     {
-        //
+        //validate
+
+        $this->validate($request,array(
+            'categoria' => 'min:2|max:255'
+        ));
+
+        $categoria = Categoria::find($id);
+
+        $velhoNome = ucwords($categoria->categoria);
+
+        $categoria->categoria = $request->input('categoria');
+
+        $nome = ucwords($categoria->categoria);
+
+        $categoria->update();
+
+        
+
+        Session::flash('success',"A categoria - $velhoNome - foi atualizada para - $nome - com sucesso.");
+
+        return redirect()->route('categoria.index');
     }
 
     /**

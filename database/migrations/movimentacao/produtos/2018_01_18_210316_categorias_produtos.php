@@ -16,7 +16,7 @@ class CategoriasProdutos extends Migration
         Schema::create('categorias', function (Blueprint $table) {
             $table->increments('id');
             $table->string('categoria');
-            $table->boolean('ativa');
+            $table->boolean('ativa')->default(1);
             $table->timestamps();
         });
     }

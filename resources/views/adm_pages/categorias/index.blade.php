@@ -34,7 +34,7 @@
 				  	<tr>
 					  	<th scope="row">{{$categoria->id}}</th>
 					  	<td>{{ ucwords($categoria->categoria) }}</td>
-					  	<td><a href="{{ route('categoria.edit',$categoria->id)}}" class="btn btn-secondary btn-sm btn-block">Editar</a></td>
+					  	<td><a href="{{ route('categoria.edit',$categoria)}}" class="btn btn-secondary btn-sm btn-block">Editar</a></td>
 					  	<td>				  		
 					  		<a href="{{ route('categoria.delete',$categoria->id) }}" class="btn btn-secondary btn-sm btn-block">Deletar</a>
 					  	</td>

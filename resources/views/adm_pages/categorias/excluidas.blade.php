@@ -22,8 +22,7 @@
 		    <tr>
 		      <th>Cod.</th>
 		      <th>Categoria</th>
-		      <th></th>
-		      <th></th>				      		      		      
+		      <th></th>			      		      		      
 		    </tr>
 		  </thead>
 		  <tbody>
