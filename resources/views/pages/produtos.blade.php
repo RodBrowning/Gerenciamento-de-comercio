@@ -30,7 +30,7 @@
 					      <td>{{ $produto->marca }}</td>
 					      <td>{{ $produto->categories->categoria }}</td>
 					      <td>{{ $produto->descricao }}</td>
-					      <td>{{ isset($produto->valor_venda) ? $produto->valor_venda : "Valor Não informado"}}</td>
+					      <td>{{ isset($produto->valor_venda) ? "R$ ".$produto->valor_venda : "Valor Não informado"}}</td>
 					    </tr>
 				    @endforeach
 				  </tbody>

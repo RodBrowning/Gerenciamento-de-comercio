@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class fornecedor_seeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(fone_fornecedor_seeder::class);
+         factory(App\Fornecedor\Fornecedor::class, 13)->create();
     }
 }

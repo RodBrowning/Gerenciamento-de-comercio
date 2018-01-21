@@ -62,17 +62,7 @@ class CategoriaController extends Controller
         return redirect()->route('categoria.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Produtos\Categoria  $categoria
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Categoria $categoria)
-    {
-        //
-    }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
@@ -98,7 +88,7 @@ class CategoriaController extends Controller
         //validate
 
         $this->validate($request,array(
-            'categoria' => 'min:2|max:255'
+            'categoria' => 'required|min:2|max:255'
         ));
 
         $categoria = Categoria::find($id);
@@ -116,17 +106,6 @@ class CategoriaController extends Controller
         Session::flash('success',"A categoria - $velhoNome - foi atualizada para - $nome - com sucesso.");
 
         return redirect()->route('categoria.index');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Produtos\Categoria  $categoria
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {   
-        
     }
 
     /**
@@ -173,4 +152,28 @@ class CategoriaController extends Controller
         return redirect()->route('categoria.excluidas');
 
     }
+
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Produtos\Categoria  $categoria
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {   
+        
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Produtos\Categoria  $categoria
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Categoria $categoria)
+    {
+        //
+    }
+
 }

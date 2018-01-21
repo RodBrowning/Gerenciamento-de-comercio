@@ -1,7 +1,19 @@
+
+/**
+  *Estilos da pagina Home.
+*/
 body{
     font-family: "Archivo Narrow", sans-serif,"Times New Roman";
 }
 
 .black-font{
     font-family: "Archivo Black";
+}
+
+/**
+  * Estilos para as tabelas.
+*/
+
+.text-table-center{
+	text-align: center;
 }

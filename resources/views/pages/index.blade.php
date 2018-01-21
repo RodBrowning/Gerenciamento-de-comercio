@@ -13,7 +13,7 @@
 
 			<div class="col-md-4 mt-5">
 				<h3>Total de Compras</h3>
-				<table class="table table-sm table-striped mt-3">
+				<table class="table table-sm table-bordered table-striped mt-3">
 				  <thead>
 				    <tr>
 				      <th>#</th>				      
@@ -43,7 +43,7 @@
 
 			<div class="col-md-4 mt-5">			
 				<h3>Total de Vendas</h3>
-				<table class="table table-sm table-striped mt-3">
+				<table class="table table-sm  table-bordered table-striped mt-3">
 				  <thead>
 				    <tr>
 				      <th>#</th>
@@ -73,7 +73,7 @@
 			
 			<div class="col-md-4 mt-5">
 				<h3>Total de Lucros</h3>
-				<table class="table table-sm table-striped mt-3">
+				<table class="table table-sm table-bordered  table-striped mt-3">
 				  <thead>
 				    <tr>
 				      <th>#</th>
@@ -115,7 +115,7 @@
 			
 			<div class="col-md-6 mt-5">
 				<h3>Produtos com estoque em baixa</h3>
-				<table class="table table-sm table-striped mt-3">
+				<table class="table table-sm table-bordered  table-striped mt-3">
 				  <thead>
 				    <tr>
 				      <th>#</th>
@@ -167,7 +167,7 @@
 
 			<div class="col-md-6 mt-5">
 				<h3>Ultimos Pagamentos</h3>
-				<table class="table table-sm table-striped mt-3">
+				<table class="table table-sm table-bordered  table-striped mt-3">
 				  <thead>
 				    <tr>
 				      <th>#</th>

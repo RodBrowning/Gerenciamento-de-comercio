@@ -9,8 +9,8 @@
 	</div>
 	<div class="col-md-6 text-center">
 		<div class="btn-group" role="group" aria-label="Basic example">
-			<a href="{{ route('produto.index') }}" class="btn btn-secondary mt-1">Produtos</a>
-		  	<a href="{{ route('categoria.index') }}" class="btn btn-secondary mt-1">Categorias</a>	
+			<a href="{{ route('categoria.index') }}" class="btn btn-secondary mt-1">Categorias</a>	
+			<a href="{{ route('produto.index') }}" class="btn btn-secondary mt-1">Produtos</a>		  	
 		</div>					
 	</div>
 	<div class="col-md-12">
