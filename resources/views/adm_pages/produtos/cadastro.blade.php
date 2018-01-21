@@ -9,7 +9,7 @@
 @section('content')
 	
 			<div class="col-md-8 offset-md-2">
-				<h2 class="text-center">Cadadastro de Produto</h2>
+				<h2 class="text-center black-font">Cadadastro de Produto</h2>
 				<hr>												
 			</div>
 			<div class="col-md-6 offset-md-3">

@@ -5,7 +5,7 @@
 @section('content')
 	
 			<div class="col-md-8 offset-md-2">
-				<h1 class="text-center">Produto</h3>
+				<h1 class="text-center black-font">Produto</h3>
 				<hr>												
 			</div>
 			<div class="col-md-8 offset-md-2">

@@ -7,7 +7,7 @@
 			<div class="col-md-12">
 				<div class="row">
 					<div class="col-md-10 offset-md-1 text-center">
-						<h1>Balanço de Estoque</h1>
+						<h1 class="black-font">Balanço de Estoque</h1>
 						<hr>
 					</div>
 				</div>

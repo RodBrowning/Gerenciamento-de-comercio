@@ -5,7 +5,7 @@
 @section('content')
 				
 			<div class="col-md-6 text-center">
-				<h2 class="">Produtos</h2>
+				<h2 class="black-font">Produtos</h2>
 			</div>
 			<div class="col-md-6 text-center">
 				<div class="btn-group" role="group" aria-label="Basic example">
@@ -28,9 +28,7 @@
 				    </tr>
 				  </thead>
 				  <tbody>
-				  	@foreach($categorias as $cate)
-					  	@foreach($produtos as $produto)
-						  	@if($cate->id == $produto->categoria_id)
+				  	 	@foreach($produtos as $produto)						  	
 						  		<tr>
 							      <th scope="row">{{$produto->id}}</th>
 							      <td>{{$produto->name}}</td>
@@ -44,10 +42,7 @@
 							      	<a href="{{ route('produto.show',$produto->id)}}" class="btn btn-secondary btn-sm">Ver</a>
 							      </td>				      
 							    </tr>
-							    @endif
 					  	@endforeach
-				  	@endforeach
-				    
 				  </tbody>
 				</table>
 				<div class="center-pagination">

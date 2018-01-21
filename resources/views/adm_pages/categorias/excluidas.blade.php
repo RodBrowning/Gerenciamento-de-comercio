@@ -5,11 +5,12 @@
 @section('content')
 	
 	<div class="col-md-6 text-center">
-		<h2 class="">Categorias Excluidas</h2>
+		<h2 class="black-font">Categorias Excluidas</h2>
 	</div>
 	<div class="col-md-6 text-center">
 		<div class="btn-group" role="group" aria-label="Basic example">
-		  <a href="{{ route('categoria.index') }}" class="btn btn-secondary mt-1">Categorias</a>	
+			<a href="{{ route('produto.index') }}" class="btn btn-secondary mt-1">Produtos</a>
+		  	<a href="{{ route('categoria.index') }}" class="btn btn-secondary mt-1">Categorias</a>	
 		</div>					
 	</div>
 	<div class="col-md-12">

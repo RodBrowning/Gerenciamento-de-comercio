@@ -17,9 +17,8 @@ class ProdutoController extends Controller
      */
     public function index()
     {   
-        $cate = Categoria::orderBy('categoria','asc')->get();
-        $produtos = Produto::orderBy('name','asc')->paginate(20);
-        return view('adm_pages.produtos.index')->withProdutos($produtos)->withCategorias($cate);
+        $produtos = Produto::orderBy('categoria_id','asc')->paginate(20);
+        return view('adm_pages.produtos.index')->withProdutos($produtos);
     }
 
     /**

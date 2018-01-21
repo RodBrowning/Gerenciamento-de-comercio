@@ -5,7 +5,7 @@
 @section('content')
 	
 	<div class="col-md-6 text-center">
-		<h2 class="">Categorias</h2>
+		<h2 class="black-font">Categorias</h2>
 	</div>
 	<div class="col-md-6 text-left">
 		<div class="btn-group" role="group" aria-label="Basic example">
