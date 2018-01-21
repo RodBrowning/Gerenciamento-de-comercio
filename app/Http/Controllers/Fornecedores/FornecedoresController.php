@@ -15,7 +15,8 @@ class FornecedoresController extends Controller
      */
     public function index()
     {
-        //
+        $fornecedores = Fornecedor::orderBy('id')->paginate(25);
+        return view('adm_pages.fornecedores.index')->withFornecedores($fornecedores);
     }
 
     /**

@@ -11,11 +11,6 @@
 |
 */
 
-Route::get('/', ['as' => 'pages.index','uses' => 'PagesController@index']);
-Route::get('estoque',['as' => 'pages.estoque', 'uses' => 'PagesController@estoque']);
-Route::get('vendas',['as' => 'pages.vendas', 'uses' => 'PagesController@vendas']);
-Route::get('compras',['as' => 'pages.compras', 'uses' => 'PagesController@compras']);
-Route::get('produtos',['as' => 'pages.produtos', 'uses' => 'PagesController@produtos']);
 
 //Controllers produto e categoria
 Route::resource('produto', 'ProdutosController\ProdutoController');
@@ -27,3 +22,22 @@ Route::get('categoria/delete/{categorium}', ['as'=>'categoria.delete', 'uses'=>'
 Route::get('categoria/{id}/restaurar_categoria',['as'=>'categoria.restaurar', 'uses'=>'ProdutosController\CategoriasController\CategoriaController@restaurar']);
 
 Route::get('categorias/excluidas',['as'=>'categoria.excluidas','uses'=>'ProdutosController\CategoriasController\CategoriaController@excluidas']);
+
+
+
+
+/**
+  * Rotas para cadastro de fornecedor
+  * 
+**/
+
+Route::resource('fornecedor', 'Fornecedores\FornecedoresController');
+
+
+
+
+Route::get('/', ['as' => 'pages.index','uses' => 'PagesController@index']);
+Route::get('estoque',['as' => 'pages.estoque', 'uses' => 'PagesController@estoque']);
+Route::get('vendas',['as' => 'pages.vendas', 'uses' => 'PagesController@vendas']);
+Route::get('compras',['as' => 'pages.compras', 'uses' => 'PagesController@compras']);
+Route::get('produtos',['as' => 'pages.produtos', 'uses' => 'PagesController@produtos']);
