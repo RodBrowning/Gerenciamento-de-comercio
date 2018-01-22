@@ -48,7 +48,24 @@ class FornecedoresController extends Controller
      */
     public function show(Fornecedor $fornecedor)
     {
-        //
+        // Codigo para mostar os numeros de telefone separados por slash /
+        // Aqui se houver telefone ele coloca no array $phone ja no formato de exibição.
+        if(count($fornecedor->telefones) > 0){
+            for ($i=0; $i <count($fornecedor->telefones) ; $i++) { 
+                $phone[$i] = preg_replace('/(\d{4})(\d{4})/','$1-$2', $fornecedor->telefones[$i]->numero_telefone);
+            }
+            // Aqui a função join concatena tudo com /
+            $tel = join(' / ', $phone);
+            return view('adm_pages.fornecedores.show')->withFornecedor($fornecedor)->withTelefone($tel);
+        }else{
+            // Caso nao haja telefones apenas informas que não foi encontrado.
+            $tel = "Numero não encontrado.";
+            return view('adm_pages.fornecedores.show')->withFornecedor($fornecedor)->withTelefone($tel);
+        }
+        
+        
+        
+
     }
 
     /**
