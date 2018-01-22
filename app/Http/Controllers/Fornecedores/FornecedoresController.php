@@ -51,8 +51,15 @@ class FornecedoresController extends Controller
         // Codigo para mostar os numeros de telefone separados por slash /
         // Aqui se houver telefone ele coloca no array $phone ja no formato de exibição.
         if(count($fornecedor->telefones) > 0){
-            for ($i=0; $i <count($fornecedor->telefones) ; $i++) { 
-                $phone[$i] = preg_replace('/(\d{4})(\d{4})/','$1-$2', $fornecedor->telefones[$i]->numero_telefone);
+            for ($i=0; $i <count($fornecedor->telefones) ; $i++) {
+                // Caso numero seja celular usar esta exibição
+                if(strlen($fornecedor->telefones[$i]->numero_telefone) >= 9){ 
+                    $phone[$i] = preg_replace('/(\d{1})(\d{4})(\d{4})/','$1-$2-$3', $fornecedor->telefones[$i]->numero_telefone);
+                }
+                // Caso numero seja fixo usar esta exibição
+                else{
+                    $phone[$i] = preg_replace('/(\d{4})(\d{4})/','$1-$2', $fornecedor->telefones[$i]->numero_telefone);
+                }
             }
             // Aqui a função join concatena tudo com /
             $tel = join(' / ', $phone);
