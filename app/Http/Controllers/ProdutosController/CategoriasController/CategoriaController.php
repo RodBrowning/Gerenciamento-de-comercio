@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\ProdutosController\CategoriasController;
 
-use App\Produtos\Categoria;
+use App\Produtos\Categoria as Categoria;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Session;
@@ -42,7 +42,7 @@ class CategoriaController extends Controller
 
         $this->validate($request,array(
 
-            'categoria' => 'required|min:2|max:255'
+            'categoria' => 'required|min:2|max:255|unique:categorias,categoria'
 
         ));
 
@@ -86,10 +86,16 @@ class CategoriaController extends Controller
     public function update(Request $request, $id)
     {
         //validate
+        $categoria = Categoria::find($id);
 
-        $this->validate($request,array(
-            'categoria' => 'required|min:2|max:255'
-        ));
+         if($categoria->categoria != $request->input('categoria')){
+            
+            $this->validate($request,array(
+               
+                'categoria' => 'required|min:2|max:255|unique:categorias,categoria'
+                
+            ));
+        }
 
         $categoria = Categoria::find($id);
 

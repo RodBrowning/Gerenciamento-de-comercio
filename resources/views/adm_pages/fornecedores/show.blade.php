@@ -5,7 +5,7 @@
 @section('content')
 	
 			<div class="col-md-8 offset-md-2">
-				<h1 class="text-center black-font">Fornecedor</h3>
+				<h1 class="text-center black-font">Detalhes do Fornecedor</h3>
 				<hr>												
 			</div>
 			<div class="col-md-8 offset-md-2">
@@ -23,7 +23,7 @@
 								    					    								  	
 								    
 								    	<tr>
-									      <th class="text-center" colspan="{{count($fornecedor->telefones)}}">Telefone</th>
+									      <th class="text-center">Telefone</th>
 									    </th>
 								    	<tr>
 									      

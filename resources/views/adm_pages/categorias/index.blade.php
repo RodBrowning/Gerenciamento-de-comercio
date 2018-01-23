@@ -2,15 +2,18 @@
 
 @section('title', 'Categorias')
 
+@section('stylesheet')
+	{!! Html::style('css/produtos.css')!!}
+@endsection
+
 @section('content')
 	
-	<div class="col-md-6 text-center">
+	<div class="col-md-7 offset-md-1 text-center">
 		<h2 class="black-font">Categorias</h2>
 	</div>
-	<div class="col-md-6 text-left">
+	<div class="col-md-4 text-center">
 		<div class="btn-group" role="group" aria-label="Basic example">
-		  <a href="{{ route('produto.index') }}" class="btn btn-secondary mt-1">Produtos</a>
-		  <a href="{{ route('categoria.create') }}" class="btn btn-secondary mt-1">Nova Categoria</a>
+		  <a href="{{ route('produto.index') }}" class="btn btn-secondary mt-1">Produtos</a>		  
 		  <a href="{{ route('categoria.excluidas') }}" class="btn btn-secondary mt-1">Categorias excluidas</a>			
 		</div>					
 	</div>
@@ -18,7 +21,7 @@
 		<hr>													
 	</div>	
 
-	<div class="col-md-6 offset-md-3">
+	<div class="col-md-7 offset-md-1">
 		<table class="table table-sm table-striped mt-3">
 		  <thead>
 		    <tr>
@@ -46,6 +49,21 @@
 		<div class="center-pagination">
 			{{ $categorias->links() }}
 		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="card card-default p-3 mt-3">
+			<div>
+				<h2>Adicionar categoria</h2>
+				<hr>
+			</div>
+			{!! Form::open(['route'=>'categoria.store', 'method'=>'POST']) !!}
+				{{ Form::label('categoria', 'Categoria:',['class'=>'font-weight-bold']) }}
+				{{ Form::text('categoria', null,['class'=>'form-control'])}}
+
+				{{ Form::submit('Criar',['class'=>'btn btn-primary btn-block mt-3'])}}
+			{!! Form::close() !!}
+		</div>
+		
 	</div>
 
 @endsection
