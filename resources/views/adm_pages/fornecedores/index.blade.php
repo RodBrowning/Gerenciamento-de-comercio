@@ -27,7 +27,7 @@
 				  	 	@foreach($fornecedores as $fornecedor)						  	
 						  		<tr>
 							      <th scope="row">{{$fornecedor->id}}</th>
-							      <td>{{$fornecedor->name}}</td>			      
+							      <td>{{ucwords($fornecedor->name)}}</td>			      
 							      <td>
 							      	<a href="{{ route('fornecedor.show',$fornecedor->id)}}" class="btn btn-secondary btn-sm">Ver</a>
 							      </td>				      

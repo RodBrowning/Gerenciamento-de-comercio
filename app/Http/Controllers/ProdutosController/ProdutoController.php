@@ -55,8 +55,8 @@ class ProdutoController extends Controller
 
         $produto = new Produto;
 
-        $produto->name = $request->name;
-        $produto->marca = $request->marca;
+        $produto->name = mb_strtolower($request->name);
+        $produto->marca = mb_strtolower($request->marca);
         $produto->categoria_id = $request->categoria_id;
         $produto->descricao = $request->descricao;
         $produto->valor_venda = $request->valor_venda;
@@ -120,8 +120,8 @@ class ProdutoController extends Controller
 
         $Produto2 = Produto::find($produto->id);
 
-        $Produto2->name = $request->input('name');
-        $Produto2->marca = $request->input('marca');
+        $Produto2->name = mb_strtolower($request->input('name'));
+        $Produto2->marca = mb_strtolower($request->input('marca'));
         $Produto2->categoria_id = $request->input('categoria_id');
         $Produto2->descricao = $request->input('descricao');
         $Produto2->valor_venda = $request->input('valor_venda');

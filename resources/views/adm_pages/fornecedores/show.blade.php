@@ -14,7 +14,7 @@
 						<div class="card">
 							<div class="container">
 								<div class="row">
-								    <h3 class="col card-header">Forenecedor: {{$fornecedor->name}} </h3><h3 class="text-right col card-header"> Cod: {{$fornecedor->id}}</h3>
+								    <h3 class="col card-header">Forenecedor: {{ucwords($fornecedor->name)}} </h3><h3 class="text-right col card-header"> Cod: {{$fornecedor->id}}</h3>
 							    </div>
 						    </div>
 						    <div class="card-block">

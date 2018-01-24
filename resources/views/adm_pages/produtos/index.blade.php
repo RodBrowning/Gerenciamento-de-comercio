@@ -31,12 +31,12 @@
 				  	 	@foreach($produtos as $produto)						  	
 						  		<tr>
 							      <th scope="row">{{$produto->id}}</th>
-							      <td>{{$produto->name}}</td>
+							      <td>{{ucwords($produto->name)}}</td>
 							      <td>
-							      	{{ isset($produto->marca) ? $produto->marca : '---' }}
+							      	{{ isset($produto->marca) ? ucwords($produto->marca) : '---' }}
 							      </td>
 							      <td>
-							      	{{ ucfirst($produto->categories->categoria) }}
+							      	{{ ucwords($produto->categories->categoria) }}
 							      </td>					      
 							      <td>
 							      	<a href="{{ route('produto.show',$produto->id)}}" class="btn btn-secondary btn-sm">Ver</a>

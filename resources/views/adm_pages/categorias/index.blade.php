@@ -56,14 +56,21 @@
 				<h2>Adicionar categoria</h2>
 				<hr>
 			</div>
-			{!! Form::open(['route'=>'categoria.store', 'method'=>'POST']) !!}
+			{!! Form::open(['route'=>'categoria.store', 'method'=>'POST', 'data-parsley-validate'=>'']) !!}
 				{{ Form::label('categoria', 'Categoria:',['class'=>'font-weight-bold']) }}
-				{{ Form::text('categoria', null,['class'=>'form-control'])}}
+				{{ Form::text('categoria', null,['class'=>'form-control mb-1', 'required'=>'', 'minlength'=>'2', 'maxlength'=>'255'])}}
 
 				{{ Form::submit('Criar',['class'=>'btn btn-primary btn-block mt-3'])}}
 			{!! Form::close() !!}
 		</div>
 		
 	</div>
+
+@endsection
+
+@section('javascript')
+	
+	{!! Html::script('js/parsley.min.js') !!}
+	{!! Html::script('js/i18n/pt-br.js') !!}
 
 @endsection
