@@ -36,7 +36,7 @@
 		          <p class="bg-primary text-white text-center">Cadastros</p>
 		          <a class="dropdown-item" href="{{ route('produto.index') }}">Produtos</a>
 		          <a class="dropdown-item" href="{{ route('fornecedor.index') }}">Fornecedores</a>
-		          <a class="dropdown-item" href="#">Vendedores</a>
+		          <a class="dropdown-item" href="{{ route('vendedor.index') }}">Vendedores</a>
 		          <hr>
 		          <a class="dropdown-item" href="#">Logout</a>
 		        </div>
