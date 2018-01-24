@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Fornecedores;
 use App\Fornecedor\Fornecedor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Session;
 
 class FornecedoresController extends Controller
 {
@@ -15,7 +16,7 @@ class FornecedoresController extends Controller
      */
     public function index()
     {
-        $fornecedores = Fornecedor::orderBy('id')->paginate(25);
+        $fornecedores = Fornecedor::orderBy('name','asc')->paginate(25);
         return view('adm_pages.fornecedores.index')->withFornecedores($fornecedores);
     }
 
@@ -26,7 +27,7 @@ class FornecedoresController extends Controller
      */
     public function create()
     {
-        //
+        return view('adm_pages.fornecedores.cadastro');
     }
 
     /**
@@ -37,7 +38,19 @@ class FornecedoresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,array(
+            'name' => 'required|min:6|max:100|unique:fornecedores,name'
+        ));
+
+        $fornecedor = new Fornecedor;
+
+        $fornecedor->name = $request->name;
+
+        $fornecedor->save();
+
+        Session::flash('success', "O fornecedor $fornecedor->name foi cadastrado com sucesso");
+
+        return redirect()->route('fornecedor.index');
     }
 
     /**
@@ -81,9 +94,10 @@ class FornecedoresController extends Controller
      * @param  \App\Fornecedor\Fornecedor  $fornecedor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Fornecedor $fornecedor)
+    public function edit($id)
     {
-        //
+        $forn = Fornecedor::find($id);
+        return view('adm_pages.fornecedores.editar')->withFornecedor($forn);
     }
 
     /**
@@ -95,7 +109,17 @@ class FornecedoresController extends Controller
      */
     public function update(Request $request, Fornecedor $fornecedor)
     {
-        //
+        $this->validate($request,array(
+            'name' => 'required|min:6|max:100|unique:fornecedores,name'
+        ));
+
+        $fornecedor->name = mb_strtolower($request->input('name'));
+
+        $fornecedor->save();
+
+        Session::flash('success',"O Fornecedor $fornecedor->name foi atualizado com sucesso");
+
+        return redirect()->route('fornecedor.show',$fornecedor->id);
     }
 
     /**
@@ -105,7 +129,11 @@ class FornecedoresController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Fornecedor $fornecedor)
-    {
-        //
+    {   
+        $name = $fornecedor->name;
+        $fornecedor->delete();
+        Session::flash('success',"O fornecedor $name foi excluido con sucesso");
+
+        return redirect()->route('fornecedor.index');
     }
 }

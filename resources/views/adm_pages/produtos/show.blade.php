@@ -14,7 +14,7 @@
 						<div class="card">
 							<div class="container">
 								<div class="row">
-								    <h3 class="col card-header">Produto: {{$produto->name}} </h3><h3 class="text-right col card-header"> Cod: {{$produto->id}}</h3>
+								    <h3 class="col card-header">Produto: {{ucwords($produto->name)}} </h3><h3 class="text-right col card-header"> Cod: {{$produto->id}}</h3>
 							    </div>
 						    </div>
 						    <div class="card-block">
@@ -33,10 +33,10 @@
 								  <tbody>
 								    <tr>
 								      @if(isset($produto->marca))	
-								      <td class="pt-2 pb-2">{{$produto->marca}}</td>
+								      <td class="pt-2 pb-2">{{ucwords($produto->marca)}}</td>
 								      @endif
 								      <td class="pt-2 pb-2">
-								     {{ ucfirst($produto->categories->categoria) }}
+								     {{ ucwords($produto->categories->categoria) }}
 								      	
 								      </td>								      
 								      @if(isset($produto->valor_venda))
@@ -49,7 +49,7 @@
 									      <th class="text-center" colspan="3">Descrição</th>
 									    </th>
 								    	<tr>
-									      <td class="text-center pt-2" colspan="3">{{$produto->descricao}}</td>
+									      <td class="text-center pt-2" colspan="3">{{ucfirst($produto->descricao)}}</td>
 									    </tr>							    
 
 								    @else
