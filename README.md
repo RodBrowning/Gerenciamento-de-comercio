@@ -1,4 +1,4 @@
-<h1>Site para controle de vendas informais</h1>
+<h1>Site para gerenciamento de comercio</h1>
 
 Este projeto esta sendo desenvolvido em <strong>Laravel 5.5 Framework</strong>.
 
